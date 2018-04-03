@@ -368,10 +368,12 @@ The following workflow describe an emission and destruction procedure.
 1. A licensed Emitter proposes a new emission by broadcasting a UnitsEmissionRequest instruction (signed with the private key of the LE and including the address of the selected LPMD and LD).
 2. The LPMD sees the UnitsEmissionRequest and waits until he receives the payment for the precious metals. If the payment doesn't match the received request they can either contact the Emitter and wait for the missing amount or broadcasts a UnitsEmissionPurchaseCancel instruction. Otherwise if everything is ok they broadcast a UnitsEmissionPurchaseConfirm instruction.
 3. The licensed Depositary sees the UnitsEmissionPurchaseConfirm instruction and waits until he receives the specified amount of precious metals. If the deliver doesn't match the received request they can either contact the LPMD and wait for the missing amount or broadcasts a UnitsEmissionDepositCancel instruction. Otherwise if everything is ok they broadcast a UnitsEmissionDepositConfirm instruction.
-4. Once the precious metals deposit has been confirmed, the member of the VUF must vote on the emission. 
-5. During one month all vShares holders can then vote on the emission by broadcasting an UnitsEmissionVote instruction (including their addresses and signed with the private key; the amount of vShares they have is also the weight of their vote). Only vShares that have not being used after the timestamp of the UnitsEmissionDepositConfirm instruction can vote on the proposal. 
-6. If the threshold of total shares is met before the conclusion of the one month voting period, the proposal is instantly approved and the voting of the emission closed.  
-7. If the the emission is approved, any node can then broadcast a UnitsEmissionConfirmed instruction to officially emit the vUnits. 
+ 
+4. Once the precious metals deposit has been confirmed, the member of the VUF can vote on the emission.
+5. During one week all vShares holders can then either vote for “approved” or they can vote for a “veto” if something is not as the rules are (for example wrong amount of gold). The emission by broadcasting an UnitsEmissionVote instruction (including their addresses and signed with the private key; the amount of vShares they have is also the weight of their vote). Only vShares that have not being used after the timestamp of the UnitsEmissionDepositConfirm instruction can vote on the proposal. If there is a valid veto voted, the certificates are invalid, and the procedure has to start from beginning. 
+6. If the threshold of total shares is met before the conclusion of the one week voting period, the proposal is instantly approved, and the voting of the emission is successfully closed.
+7. If the the emission is approved, any node can then broadcast a UnitsEmissionConfirmed instruction to officially emit the vUnits.
+
 
 The emission price is calculated when the emission is approved (see Emission Price chapter). The VUF must vote on the emissions in a FIFO order, to avoid the possibility of price manipulation.
 
