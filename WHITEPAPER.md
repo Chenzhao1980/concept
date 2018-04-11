@@ -355,7 +355,7 @@ The list goes on and on. The genesis block requires to have a special set of ins
 
 With the registered parties a testphase (more on this on the roadmap) will be started, where the genesis block will be issued and start operating the blockchain with all trusted parties.
 
-The current version of Value Units uses a closed blockchain based on Peershares and has as of the 25.12.2017 a total circulation of 9'125'957.90 vUnits with a Value Basket that hold 13.647 Kg Gold and 255.996 Kg Silver. These holdings will be included into the Genesis Block.
+The current version of Value Units uses a closed blockchain based on Peershares and has as of the 11.04.2018 a total circulation of 9,616,744.61 vUnits with a Value Basket that hold 16,867 Kg Gold. These holdings will be included into the Genesis Block.
 
 <a name="emission-destruction"/>
 
